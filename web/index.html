@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Record Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">SRMS</span>
+        <span class="brand-text">Student Record Management System</span>
+      </div>
+      <span class="brand-stack">Java &middot; JDBC &middot; MySQL &middot; HTML/CSS</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="panel">
+      <h2>Add a Student</h2>
+      <form id="student-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Aisha Rao" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="e.g. aisha@example.com" required>
+          </div>
+          <div class="field">
+            <label for="course">Course</label>
+            <input type="text" id="course" name="course" placeholder="e.g. MCA" required>
+          </div>
+          <div class="field">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" placeholder="e.g. 1" min="1" max="5" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Add Student</button>
+        <span id="status-msg" class="status-msg"></span>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>All Students</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Year</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="student-table-body">
+          <!-- rows are inserted here by app.js -->
+        </tbody>
+      </table>
+      <p id="empty-msg" class="empty-msg" hidden>No students yet. Add the first one above.</p>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    Built with core Java (HttpServer) + JDBC + MySQL + vanilla HTML/CSS/JS — no frameworks required.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
